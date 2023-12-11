@@ -1,0 +1,33 @@
+html(lang="es")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title AudioTecShop | #{pagina}
+    block styles
+    link(rel="stylesheet", href="/css/app.css")
+
+  body.min-h-screen.bg-gray-50
+
+    include includes/header-admin
+
+    main(class="mx-auto container mt-10 px-2")
+      block contenido
+
+    footer(class="bg-indigo-800 text-center")
+      .container.mx-auto.py-6
+        .space-y-2
+          h3.text-xl.font-semibold.text-gray-900 Enlaces rápidos
+
+          ul(class="text-green-400")
+            li
+              a(href="https://www.facebook.com/Cibershopcolombia/") Facebook
+            li
+              a(href="https://www.instagram.com/kzcolombiaoficial") Instragram
+
+          h3.text-xl.font-semibold.text-gray-900 Contacto
+          address.text-green-400
+            p Cl. 33 #42B-06, La Candelaria, Medellín, Colombia
+            p Teléfono: (123) 456-7890
+            p Correo: info@audiotecshop.com
+            a(href="https://www.linkedin.com/in/andres-felipe-melendez-dorado/") Linkedin
+  block scripts

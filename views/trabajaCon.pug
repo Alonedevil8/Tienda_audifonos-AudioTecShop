@@ -1,0 +1,53 @@
+extends layout/app
+
+block styles 
+  link(rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css")
+
+block contenido
+
+  nav(class="my-5 text-sm md:flex md:items-center md:gap-5 font-bold text-indigo hidden justify-end")
+    if name === "no"
+      a(href="/auth/registro" class="ml-auto") Crear Cuenta
+      a(href="/auth/login" class="bg-indigo-600 py-2 px-10 rounded-lg") Iniciar Sesión
+    else
+      a.text-center.text-1xl(href="http://localhost:3001/mis-audifonos")= name
+      form(action="/auth/cerrar-sesion" method="POST")
+        input(type="hidden" name="_csrf" value=csrfToken )
+        input(type="submit" class="bg-indigo-600 py-2 px-10 rounded-lg font-bold cursor-pointer" value="Cerrar Sesión")
+
+  
+  div(class="py-5")
+    h1(class="text-center text-4xl font-extrabold")= pagina
+
+    ul(class="py-5 text-justify")
+      li
+        | En AudioTecShop, valoramos el compromiso con la excelencia y la pasión por la innovación. Estamos en constante búsqueda de emprendedores talentosos que deseen unirse a nuestra red de franquicias y contribuir a nuestro continuo crecimiento.
+
+      li
+        | Como empresa , nos comprometemos a proporcionar un ambiente de trabajo inclusivo y diverso en todas nuestras franquicias. No discriminamos por motivos de raza, religión, género, orientación sexual, identidad de género, origen nacional, discapacidad o cualquier otro estado protegido por la ley.
+
+      li
+        | Nuestra empresa se esfuerza por ofrecer oportunidades de desarrollo empresarial y crecimiento personal a nuestros franquiciados. Valoramos la diversidad de experiencias y perspectivas, y creemos que esta diversidad enriquece nuestra red de franquicias y nos permite brindar un mejor servicio a nuestros clientes.
+
+      li
+        | Si estás interesado en unirte a nuestra red de franquicias, te invitamos a explorar las oportunidades disponibles y a presentar tu solicitud. ¡Esperamos conocerte y dar el siguiente paso en tu carrera como franquiciado de AudioTecShop!
+      
+    h4(class="text center") Te Interesa!! 
+      a(href="/mis-propiedades" class="text-red-400") Dale click aqui
+    h5(class="text-xs  text-gray-400") Recuerda Loguearte
+
+    section(class="py-5")
+      h2(class="text-center text-3xl font-extrabold pt-10") Emprendedores como Tu: 
+
+    div(class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-5")
+      each propiedad in local
+        include ./templates/card
+
+
+block scripts
+  script(src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js")
+  script(src="https://unpkg.com/esri-leaflet@3.0.8/dist/esri-leaflet.js")
+  script(src="https://unpkg.com/esri-leaflet-geocoder@2.2.13/dist/esri-leaflet-geocoder.js")
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-geosearch/2.7.0/bundle.min.js")
+
+  script(src="/js/mapaInicio.js")

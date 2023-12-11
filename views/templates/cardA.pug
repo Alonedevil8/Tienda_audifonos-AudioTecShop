@@ -1,0 +1,9 @@
+.bg-white.shadow.rounded-lg
+    img.object-cover.h-72.w-full(src=`/uploads/${audifono.imagen}`, alt=`Imagen de ${audifono.modelo}`)
+    .p-5.space-y-2.text-center
+        h3.text-2xl.font-bold= audifono.modelo
+        h3.text-1xl= audifono.tipoConexion
+
+        a.block.text-center.text-xs(href=`/audifonos/${audifono.id}`) Ver
+
+    a.text-gray-400.block.text-center ------------

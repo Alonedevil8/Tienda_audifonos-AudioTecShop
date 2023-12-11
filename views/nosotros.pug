@@ -1,0 +1,47 @@
+extends layout/app
+
+block contenido
+
+  nav(class="my-5 text-sm md:flex md:items-center md:gap-5 font-bold text-indigo hidden justify-end")
+    if name === "no"
+      a(href="/auth/registro" class="ml-auto") Crear Cuenta
+      a(href="/auth/login" class="bg-indigo-600 py-2 px-10 rounded-lg") Iniciar Sesión
+    else
+      a.text-center.text-1xl(href="http://localhost:3001/mis-audifonos")= name
+      form(action="/auth/cerrar-sesion" method="POST")
+        input(type="hidden" name="_csrf" value=csrfToken )
+        input(type="submit" class="bg-indigo-600 py-2 px-10 rounded-lg font-bold cursor-pointer" value="Cerrar Sesión")
+
+  div(class="py-6")
+    h1(class="text-center text-4xl font-extrabold")= pagina
+
+  h3(class="py-2 text-justify text-2xl font-extrabold") 
+    | ¡Bienvenidos a AudioTecShop!
+  h3(class="py-4 text-justify") 
+    | Somos una empresa apasionada por la calidad del sonido y la tecnología de audio. En AudioTecShop, nos enorgullece ofrecer una amplia gama de audífonos de importación de primera calidad para satisfacer las necesidades auditivas de nuestros clientes.
+
+  h3(class="py-2 text-justify text-1xl font-extrabold") Nuestra Historia
+  h3(class="py-4 text-justify") 
+    | AudioTecShop fue fundada por entusiastas del audio con una visión clara: proporcionar a nuestros clientes acceso a los audífonos más avanzados y de alta calidad de todo el mundo. Desde nuestro inicio, nos hemos comprometido a ofrecer una experiencia de compra excepcional y un servicio al cliente de primera clase.
+
+  h3(class="py-2 text-justify text-1xl font-extrabold") Nuestra Pasión
+  h3(class="py-3 text-justify") 
+    | La pasión por el sonido y la tecnología es lo que impulsa a AudioTecShop. Cada producto que ofrecemos ha sido cuidadosamente seleccionado por nuestro equipo de expertos para garantizar un rendimiento de audio excepcional y una experiencia auditiva inigualable.
+
+  h3(class="py-3 text-justify text-1xl font-extrabold") ¿Por Qué Elegirnos?
+  ul(class="px-6")
+    li
+        strong Variedad de Opciones:
+        |  Ofrecemos una amplia variedad de audífonos de importación, desde modelos inalámbricos hasta aquellos con tecnología de cancelación de ruido.
+    li
+        strong Calidad Garantizada:
+        |  Todos nuestros productos son de marcas reconocidas y cuentan con altos estándares de calidad.
+    li
+        strong Atención al Cliente:
+        |  Estamos aquí para ayudarte en cada paso de tu compra y aclarar cualquier pregunta que puedas tener.
+    li
+        strong Envío Rápido y Seguro:
+        |  Garantizamos entregas rápidas y seguras a tus puertas.
+
+  h3(class="py-4 text-justify text-1xl text-green-600") 
+    | ¡Gracias por visitarnos y ser parte de la comunidad de AudioTecShop! Esperamos que encuentres el audífono perfecto que mejore tu experiencia auditiva. Si tienes alguna pregunta, no dudes en contactarnos. ¡Estamos aquí para servirte!

@@ -1,0 +1,53 @@
+extends ../layout/admin
+
+block styles 
+  link(rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css")
+
+block contenido
+  .py-10
+    h1.text-4xl.my-10.font-extrabold.text-center.text Audio
+      span.font-normal TecShop
+    h2.text-center.text-2xl.font-extrabold= pagina
+
+    if errores
+      div(class="max-w-md.mx-auto.my-10")
+        each error in errores
+          p.bg-red-600.text-white.uppercase.text-xs.text-center.p-2.mb-1.font-bold= error.msg
+    
+    
+    div(class="bg-white shadow py-8 px-4 rounded mx-auto max-w-4xl my-10 md:px-10") 
+      form.space-y-8(method="POST" action="/audifonos/crear")
+        input(type="hidden" name="_csrf" value= csrfToken)
+        div.space-y-5
+          h3.text-lg.leading-6.font-mediun.text-gray-900 Informacion General
+          p.text-gray-600 Añade informacion Sobre el Producto
+          
+          div
+            label.block.text-sm-uppercase.text-gray-500.mb-2.font-bold(for="modelo") Titulo del Anuncio
+            input#modelo.w-full.px-3.py-2.border.border-gray-300.rounded-md.placeholder-gray-400(placeholder="Titulo Propiedad, ej. casa en la playa" type="text" name="modelo" value= datos.modelo ? datos.modelo : "")  
+
+          div
+            label.block.text-sm-uppercase.text-gray-500.mb-2.font-bold(for="descripcion") Descripcion del Producto
+            textarea#descripcion.w-full.px-3.py-2.border.border-gray-300.rounded-md.placeholder-gray-400(placeholder="Descripcion de la propiedad, ej. casa con 4 cuartos, piscina..." name="descripcion")= value= datos.descripcion ? datos.descripcion : ""
+          
+          div
+            label.block.text-sm-uppercase.text-gray-500.mb-2.font-bold(for="tipoConexion") Tipo de Conexion
+            input#tipoConexion.w-full.px-3.py-2.border.border-gray-300.rounded-md.placeholder-gray-400(placeholder=" Cable 3.5mm, Cable C, Bluetooh o Wifi" type="text" name="tipoConexion" value= datos.tipoConexion ? datos.tipoConexion : "")  
+
+          div(class="md:flex md:gap-4 space-y-5 md:space-y-0")
+
+            div(class="nd:w-1/3")
+              label.block.text-sm-uppercase.text-gray-500.mb-2.font-bold(for="marca") Marca
+              select#marca.w-full.px-3.py-2.border.border-gray-300.rounded-md.placeholder-gray-400(name="marca")
+                option(value="") - Seleccione -
+                each marca in marcas
+                  option(value= marca.id selected= datos.marca ? datos.marca == marca.id ? true : false : null )= marca.nombre
+
+            div(class="nd:w-1/3")
+              label.block.text-sm-uppercase.text-gray-500.mb-2.font-bold(for="precio") Precio
+              select#precio.w-full.px-3.py-2.border.border-gray-300.rounded-md.placeholder-gray-400(name="precio")
+                option(value="") - Seleccione -
+                each precio in precios
+                  option(value= precio.id selected= datos.precio ? datos.precio == precio.id ? true : false : null )= precio.nombre
+       
+          input(class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 cursor-pointer rounded-md" type="submit" value="Anadir imagen")

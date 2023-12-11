@@ -1,0 +1,40 @@
+extends layout/app
+
+block contenido
+
+  nav(class="my-5 text-sm md:flex md:items-center md:gap-5 font-bold text-indigo hidden justify-end")
+    if name === "no"
+      a(href="/auth/registro" class="ml-auto") Crear Cuenta
+      a(href="/auth/login" class="bg-indigo-600 py-2 px-10 rounded-lg") Iniciar Sesión
+    else
+      a.text-center.text-1xl(href="http://localhost:3001/mis-audifonos")= name
+      form(action="/auth/cerrar-sesion" method="POST")
+        input(type="hidden" name="_csrf" value=csrfToken )
+        input(type="submit" class="bg-indigo-600 py-2 px-10 rounded-lg font-bold cursor-pointer" value="Cerrar Sesión")
+
+
+  div(class="py-5")
+    h1(class="text-center text-4xl font-extrabold")= pagina
+
+    h2(class="py-3 font-extrabold") Información de Contacto
+    p
+      | ¿Tienes alguna pregunta o comentario? ¡Estamos aquí para ayudarte! No dudes en ponerte en contacto con nosotros a través de los siguientes medios:
+
+    ul(class="py-2")
+      li
+        strong Dirección: 
+        |  Cl. 33 #42B-06, La Candelaria, Medellín, Colombia
+
+      li
+        strong Teléfono: 
+        |  +123 456 789
+
+      li
+        strong Correo Electrónico: 
+        a(href="mailto:info@audiotecshop.com") info@audiotecshop.com
+
+    h2(class="py-3 font-extrabold") Formulario de Contacto
+    p(class="py-2")
+      | Si prefieres, también puedes completar el siguiente formulario y nos pondremos en contacto contigo lo antes posible
+
+    <a href="http://localhost:3001/propiedad/5d47dab3-7b94-4922-bb83-603d629188c3" class="text-center text-indigo-600 font-extrabold"> >>> Visitanos Aquí</a>

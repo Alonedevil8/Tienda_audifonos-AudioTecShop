@@ -1,0 +1,37 @@
+extends ../layout/app
+
+block contenido
+  
+  div(class="py-5")
+    h1( id="titulo" class="text-4xl my-10 font-extrabold text-center")= audifonos.modelo
+
+    div
+      a(href="#" class="font-bold text-gray-600 text-sm") Marca: 
+        spam(class="font-normal")= audifonos.marca.nombre
+    
+    div(class="mt-5 md:flex md:gap-4 md:items-start")
+      div(class="md:w-2/3 bg-white shadow rounded-lg")
+        img(src=`../uploads/${audifonos.imagen}` alt=`imagen de la propiedad ${audifonos.modelo}`)
+
+        h2(class="text-2xl leading-6 font-bold text-gray-900 py-3") Caracteristicas Tecnicas:
+
+        div(class="px-5 py-0 space-y-0")
+          p(class="text-justify")= audifonos.descripcion
+
+      aside(class="md:w-1/3 bg-white shadow rounded-lg") 
+        h3(class="text-center py-5 leading-5 text-2xl font-bold text-gray-900") Informacion:
+
+        h3(class="py-2 leading-5 text-lg font-bold text-gray-600") Precio:
+        h4(class="leading-5 text-lg font-bold text-gray-400")= audifonos.precio.nombre
+        
+        h3(class="py-4") 
+
+        h3(class="py-2 leading-5 text-lg font-bold text-gray-600") Tipo de Cable:
+        h4(class="leading-5 text-lg font-bold text-gray-400")= audifonos.tipoConexion
+
+        h3(class="py-4") 
+
+        h3(class="py-2 leading-5 text-lg font-bold text-gray-600") Link Enlaze de Compra:
+        h4(class="leading-5 text-lg font-bold text-gray-400")
+          a(href=`https://www.google.com/search?q=${audifonos.modelo}`) Comprar
+

@@ -1,0 +1,92 @@
+extends layout/app
+
+block styles
+  link(rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css")
+
+block contenido
+
+  nav(class="my-5 text-sm md:flex md:items-center md:gap-5 font-bold text-indigo hidden justify-end")
+    if name === "no"
+      a(href="/auth/registro" class="ml-auto") Crear Cuenta
+      a(href="/auth/login" class="bg-indigo-600 py-2 px-10 rounded-lg") Iniciar Sesión
+    else
+      a.text-center.text-1xl(href="http://localhost:3001/mis-audifonos")= name
+      form(action="/auth/cerrar-sesion" method="POST")
+        input(type="hidden" name="_csrf" value=csrfToken )
+        input(type="submit" class="bg-indigo-600 py-2 px-10 rounded-lg font-bold cursor-pointer" value="Cerrar Sesión")
+
+  if name === "Admin"
+      a(href="/mis-audifonos" class="font-extrabold text-red-500 ") >> Agregar Aqui
+
+  section(class="py-5")
+    h2(class="text-2xl font-extrabold pt-10")= pagina
+    
+    div(class="grid grid-cols-1 md:grid-cols-3  text-2xl gap-5 mt-5 font-bold")  Moondrop: 
+
+    div(class="grid grid-cols-1 md:grid-cols-4 gap-5 mt-5")
+      each audifono in audifonos1
+          .bg-white.shadow.rounded-lg
+            img.object-cover.h-72.w-full(src=`/uploads/${audifono.imagen}`, alt=`Imagen de ${audifono.modelo}`)
+            .p-5.space-y-2.text-center
+              h3.text-2xl.font-bold= audifono.modelo
+              h3.text-1xl= audifono.tipoConexion
+              h3.text-lg
+                if audifono.disponible
+                  p(class="text-green-400") Disponible
+                else
+                  p(class="text-red-600") No Disponible
+                  
+              a.block.text-center.text-xs(href=`/audifonos/${audifono.id}`) Ver
+
+    div(class="grid grid-cols-1 md:grid-cols-3  text-2xl gap-5 mt-5 font-bold")  CCA: 
+
+    div(class="grid grid-cols-1 md:grid-cols-4 gap-5 mt-5")
+      each audifono in audifonos2
+          .bg-white.shadow.rounded-lg
+            img.object-cover.h-72.w-full(src=`/uploads/${audifono.imagen}`, alt=`Imagen de ${audifono.modelo}`)
+            .p-5.space-y-2.text-center
+              h3.text-2xl.font-bold= audifono.modelo
+              h3.text-1xl= audifono.tipoConexion
+              h3.text-lg
+                if audifono.disponible
+                  p(class="text-green-400") Disponible
+                else
+                  p(class="text-red-600") No Disponible
+                  
+              a.block.text-center.text-xs(href=`/audifonos/${audifono.id}`) Ver
+    
+    div(class="grid grid-cols-1 md:grid-cols-3  text-2xl gap-5 mt-5 font-bold") Sony: 
+
+    div(class="grid grid-cols-1 md:grid-cols-4 gap-5 mt-5")
+      each audi in audifonos3
+          .bg-white.shadow.rounded-lg
+            img.object-cover.h-72.w-full(src=`/uploads/${audi.imagen}`, alt=`Imagen de ${audi.modelo}`)
+            .p-5.space-y-2.text-center
+              h3.text-2xl.font-bold= audi.modelo
+              h3.text-1xl= audi.tipoConexion
+              h3.text-lg
+                if audi.disponible
+                  p(class="text-green-400") Disponible
+                else
+                  p(class="text-red-600") No Disponible
+                  
+              a.block.text-center.text-xs(href=`/audifonos/${audi.id}`) Ver
+
+    div(class="grid grid-cols-1 md:grid-cols-3  text-2xl gap-5 mt-5 font-bold") KZ:
+
+    div(class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-5")
+      each audifono in audifonos
+       h2(class="text-3xl pt-5")
+          .bg-white.shadow.rounded-lg
+            img.object-cover.h-72.w-full(src=`/uploads/${audifono.imagen}`, alt=`Imagen de ${audifono.modelo}`)
+            .p-5.space-y-2.text-center
+              h3.text-2xl.font-bold= audifono.modelo
+              h3.text-lg= audifono.tipoConexion
+              
+              h3.text-lg
+                if audifono.disponible
+                  p(class="text-green-400") Disponible
+                else
+                  p(class="text-red-600") No Disponible
+                  
+              a.block.text-center.text-xs(href=`/audifonos/${audifono.id}`) Ver

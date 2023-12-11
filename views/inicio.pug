@@ -1,0 +1,71 @@
+extends layout/app
+
+block styles 
+  link(rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css")
+
+block contenido
+  <p>
+
+  nav(class="my-5 text-sm md:flex md:items-center md:gap-5 font-bold text-indigo hidden justify-end")
+    if name === "no"
+      a(href="/auth/registro" class="ml-auto") Crear Cuenta
+      a(href="/auth/login" class="bg-indigo-600 py-2 px-10 rounded-lg") Iniciar Sesión
+    else
+      a.text-center.text-1xl(href="http://localhost:3001/mis-audifonos")= name
+      form(action="/auth/cerrar-sesion" method="POST")
+        input(type="hidden" name="_csrf" value=csrfToken )
+        input(type="submit" class="bg-indigo-600 py-2 px-10 rounded-lg font-bold cursor-pointer" value="Cerrar Sesión")
+
+
+
+  div(class="py-3")
+    div(class="mt-4 text-center")
+      img(src="/img/banner_principal.png", alt="Banner Promocional", class="mx-auto")
+
+    section(class="py-5")
+      h2(class="text-3xl font-extrabold pt-10") Ultimas Novedades:
+
+    div(class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-5")
+      each audifono in audifonos
+        include ./templates/cardA
+
+  div(class="py-5")
+    h1(class="text-2xl font-extrabold") Puedes Encontrarnos En:
+
+    div(class="flex flex-col md:flex-row items-center py-10 gap-4")
+      h2(class="text-sm uppercase text-gray-800 font-bold") Filtrado Propiedades:
+
+      div(class="w-full md:w-auto flex-center gap-2")
+        label(for="categorias" class="text-sm uppercase text-gray-500 font-bold") Categorias
+        select(id="categorias" class=" flex-1 bg-white w-full px-3 py-2 border border-gray-300 rounded-md shadow")
+          option(value="") - Seleccione -
+          each categoria in categorias
+            option(value=categorias.id)= categoria.nombre
+
+    div(id="mapa-inicio" class="h-[400px]")
+
+block scripts
+  script(src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js")
+  script(src="https://unpkg.com/esri-leaflet@3.0.8/dist/esri-leaflet.js")
+  script(src="https://unpkg.com/esri-leaflet-geocoder@2.2.13/dist/esri-leaflet-geocoder.js")
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-geosearch/2.7.0/bundle.min.js")
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-geosearch/2.7.0/bundle.min.js")
+  script(src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js")
+
+  script(src="/js/mapaInicio.js")
+
+  script.
+    document.addEventListener("DOMContentLoaded", () => {
+      Swal.fire({
+        title: 'Descuentos 11-11',
+        text: 'Oferta válida para la compra de ciertos artículos y sujeta a disponibilidad de existencias.',
+        imageUrl: 'https://static.vecteezy.com/system/resources/previews/004/842/382/non_2x/50-percent-off-discount-and-sale-promotion-banner-vector.jpg',
+        imageWidth: 1000,
+        imageHeight: 400,
+        imageAlt: 'Custom image',
+        icon: 'info',
+      });
+    });
+
+
+      
