@@ -1,7 +1,32 @@
 #Tienda de Audífonos - Microservicios
 
-Este repositorio contiene una aplicación de una tienda de audífonos construida con microservicios. Aquí encontrarás información sobre la configuración del proyecto y cómo ejecutarlo. ¡Comencemos!
-Contenido
+Descripción del Proyecto
+
+La "Tienda de Audífonos Microservicios" es una plataforma innovadora diseñada para brindar a los amantes de la música una experiencia de compra única y personalizada. Construida utilizando la arquitectura de microservicios, esta aplicación ofrece un enfoque modular y escalable para gestionar diversos aspectos de una tienda de audífonos.
+Características Principales:
+
+    Exploración de Audífonos: Los usuarios pueden explorar una amplia variedad de audífonos de alta calidad, con detalles detallados sobre cada producto, incluyendo especificaciones técnicas y reseñas de otros usuarios.
+
+    Marcas y Categorías: La aplicación organiza los audífonos en diferentes marcas y categorías para facilitar la búsqueda y selección de productos según las preferencias individuales de los usuarios.
+
+    Carrito de Compras: Los clientes pueden agregar audífonos a su carrito de compras, permitiéndoles revisar y ajustar su selección antes de realizar la compra final.
+
+    Gestión de Usuarios: La plataforma proporciona una interfaz para que los usuarios gestionen sus perfiles, realicen un seguimiento de sus compras anteriores y administren su información personal.
+
+    Microservicios Eficientes: La arquitectura de microservicios permite una gestión eficiente de cada componente, mejorando la escalabilidad, la flexibilidad y facilitando futuras expansiones y actualizaciones.
+
+    Importación y Eliminación de Datos: Scripts dedicados facilitan la importación y eliminación de datos en la base de datos, brindando flexibilidad en la gestión de la información.
+
+Tecnologías Utilizadas:
+
+    Node.js: Plataforma de ejecución para el servidor.
+    Express: Marco de aplicación web para Node.js.
+    Webpack y PostCSS: Herramientas para la compilación y optimización de estilos y scripts.
+    Tailwind CSS: Biblioteca de estilos utilizable y personalizable.
+    Sequelize: ORM para interactuar con la base de datos MySQL.
+    JWT: Para la autenticación segura de usuarios.
+    Nodemailer: Facilita el envío de correos electrónicos para confirmaciones y comunicaciones.
+    Concurrently y Nodemon: Herramientas para facilitar el desarrollo y la gestión del servidor.
 
     Información del Proyecto
     Configuración del Proyecto
@@ -21,22 +46,13 @@ Contenido
 
 Asegúrate de tener Node.js instalado en tu sistema. Luego, sigue estos pasos para configurar el proyecto:
 
-    Clona este repositorio en tu máquina local:
-
-    bash
-
-git clone https://github.com/tu-usuario/tienda_audifonos_microservicios.git
+    Clona este repositorio en tu máquina local: 
+        git clone https://github.com/tu-usuario/tienda_audifonos_microservicios.git
 
 Navega al directorio del proyecto:
-
-bash
-
-cd tienda_audifonos_microservicios
+    cd tienda_audifonos_microservicios
 
 Instala las dependencias:
-
-bash
-
     npm install
 
 #Scripts Disponibles
