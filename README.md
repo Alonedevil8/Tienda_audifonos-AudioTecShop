@@ -1,4 +1,4 @@
-Tienda de Audífonos - Microservicios
+#Tienda de Audífonos - Microservicios
 
 Este repositorio contiene una aplicación de una tienda de audífonos construida con microservicios. Aquí encontrarás información sobre la configuración del proyecto y cómo ejecutarlo. ¡Comencemos!
 Contenido
@@ -10,14 +10,14 @@ Contenido
     Descripción de la Aplicación
     Licencia
 
-Información del Proyecto
+#Información del Proyecto
 
     Nombre del Proyecto: tienda_audifonos_microservicios
     Versión: 1.0.0
     Autor: Andrés Dorado
     Licencia: ISC
 
-Configuración del Proyecto
+#Configuración del Proyecto
 
 Asegúrate de tener Node.js instalado en tu sistema. Luego, sigue estos pasos para configurar el proyecto:
 
@@ -39,7 +39,7 @@ bash
 
     npm install
 
-Scripts Disponibles
+#Scripts Disponibles
 
 Este proyecto viene con varios scripts predefinidos en el archivo package.json:
 
@@ -51,7 +51,7 @@ Este proyecto viene con varios scripts predefinidos en el archivo package.json:
     npm run db:importar: Importa datos iniciales a la base de datos.
     npm run db:eliminar: Elimina datos de la base de datos.
 
-Modelos de Datos
+#Modelos de Datos
 
 Los modelos de datos se importan desde sus respectivos archivos y se establecen relaciones utilizando el método "belongsTo". Aquí están los modelos disponibles:
 
@@ -63,7 +63,7 @@ Los modelos de datos se importan desde sus respectivos archivos y se establecen 
 
 A continuación, se muestran las relaciones entre los modelos:
 
-javascript
+#javascript
 
 Audífono.belongsTo(Marca); // Audífono pertenece a Marca.
 Audífono.belongsTo(Categoría); // Audífono pertenece a Categoría.
@@ -75,13 +75,12 @@ Audífono.belongsTo(Carrito, { foreignKey: "carritoId" });
 // Exporta los modelos de datos para poder utilizarlos en otros módulos.
 export { Audífono, Marca, Categoría, Usuario, Carrito };
 
-Descripción de la Aplicación
+#Descripción de la Aplicación
 
 Esta es una aplicación de una tienda de audífonos construida con microservicios. Los usuarios pueden explorar audífonos, ver detalles, agregar al carrito, y más. Los modelos de datos están diseñados para administrar audífonos, marcas, categorías, usuarios y carritos.
-
 ¡Explora y disfruta de la tienda de audífonos!
 
-Vista
+#Vista
 
 ![Screenshot_2](https://github.com/Alonedevil8/Tienda_audifonos-Nodejs---Pug-Monolitica-/assets/6482729/a9d3b6c5-519f-4f84-8f49-f544cef2c519)
 ![Screenshot_3](https://github.com/Alonedevil8/Tienda_audifonos-Nodejs---Pug-Monolitica-/assets/6482729/0761199f-bd34-4a83-9429-1a5a56a9a2a5)
