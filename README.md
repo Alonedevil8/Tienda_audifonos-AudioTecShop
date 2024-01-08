@@ -29,13 +29,6 @@ Tecnologías Utilizadas:
     Nodemailer: Facilita el envío de correos electrónicos para confirmaciones y comunicaciones.
     Concurrently y Nodemon: Herramientas para facilitar el desarrollo y la gestión del servidor.
 
-    Información del Proyecto
-    Configuración del Proyecto
-    Scripts Disponibles
-    Modelos de Datos
-    Descripción de la Aplicación
-    Licencia
-
 #Información del Proyecto
 
     Nombre del Proyecto: tienda_audifonos_microservicios
