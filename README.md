@@ -1,8 +1,8 @@
-#Tienda de Audífonos - Microservicios
+#Poyecto Final - BootCamp Globant Academy
 
 Descripción del Proyecto
 
-La "Tienda de Audífonos Microservicios" es una plataforma innovadora diseñada para brindar a los amantes de la música una experiencia de compra única y personalizada. Construida utilizando la arquitectura de microservicios, esta aplicación ofrece un enfoque modular y escalable para gestionar diversos aspectos de una tienda de audífonos.
+La "Tienda de Audífonos " Es una plataforma innovadora diseñada para brindar a los amantes de la música una experiencia de compra única y personalizada. Construida utilizando la arquitectura de microservicios, esta aplicación ofrece un enfoque modular y escalable para gestionar diversos aspectos de una tienda de audífonos.
 Características Principales:
 
     Exploración de Audífonos: Los usuarios pueden explorar una amplia variedad de audífonos de alta calidad, con detalles detallados sobre cada producto, incluyendo especificaciones técnicas y reseñas de otros usuarios.
@@ -49,11 +49,11 @@ Asegúrate de tener Node.js instalado en tu sistema. Luego, sigue estos pasos pa
     Clona este repositorio en tu máquina local: 
         git clone https://github.com/tu-usuario/tienda_audifonos_microservicios.git
 
-Navega al directorio del proyecto:
-    cd tienda_audifonos_microservicios
-
-Instala las dependencias:
-    npm install
+    Navega al directorio del proyecto:
+        cd tienda_audifonos_microservicios
+    
+    Instala las dependencias:
+        npm install
 
 #Scripts Disponibles
 
@@ -79,22 +79,18 @@ Los modelos de datos se importan desde sus respectivos archivos y se establecen 
 
 A continuación, se muestran las relaciones entre los modelos:
 
-#javascript
+    #javascript
+    
+    Audífono.belongsTo(Marca); // Audífono pertenece a Marca.
+    Audífono.belongsTo(Categoría); // Audífono pertenece a Categoría.
+    Audífono.belongsTo(Usuario); // Audífono pertenece a Usuario.
+    Audífono.belongsTo(Carrito, { foreignKey: "carritoId" });
+    
+    // Otras relaciones pueden agregarse según sea necesario.
+    
+    // Exporta los modelos de datos para poder utilizarlos en otros módulos.
+    export { Audífono, Marca, Categoría, Usuario, Carrito };
 
-Audífono.belongsTo(Marca); // Audífono pertenece a Marca.
-Audífono.belongsTo(Categoría); // Audífono pertenece a Categoría.
-Audífono.belongsTo(Usuario); // Audífono pertenece a Usuario.
-Audífono.belongsTo(Carrito, { foreignKey: "carritoId" });
-
-// Otras relaciones pueden agregarse según sea necesario.
-
-// Exporta los modelos de datos para poder utilizarlos en otros módulos.
-export { Audífono, Marca, Categoría, Usuario, Carrito };
-
-#Descripción de la Aplicación
-
-Esta es una aplicación de una tienda de audífonos construida con microservicios. Los usuarios pueden explorar audífonos, ver detalles, agregar al carrito, y más. Los modelos de datos están diseñados para administrar audífonos, marcas, categorías, usuarios y carritos.
-¡Explora y disfruta de la tienda de audífonos!
 
 #Vista
 
