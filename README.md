@@ -3,9 +3,10 @@
 Descripción del Proyecto
 
 La "Tienda de Audífonos " Es una plataforma innovadora diseñada para brindar a los amantes de la música una experiencia de compra única y personalizada. Construida utilizando la arquitectura de microservicios, esta aplicación ofrece un enfoque modular y escalable para gestionar diversos aspectos de una tienda de audífonos.
+
 Características Principales:
 
-    Exploración de Audífonos: Los usuarios pueden explorar una amplia variedad de audífonos de alta calidad, con detalles detallados sobre cada producto, incluyendo especificaciones técnicas y reseñas de otros usuarios.
+    Los usuarios pueden explorar una amplia variedad de audífonos de alta calidad, con detalles detallados sobre cada producto, incluyendo especificaciones técnicas y reseñas de otros usuarios.
 
     Marcas y Categorías: La aplicación organiza los audífonos en diferentes marcas y categorías para facilitar la búsqueda y selección de productos según las preferencias individuales de los usuarios.
 
