@@ -1,4 +1,4 @@
-# Poyecto Final - BootCamp Globant Academy
+# Proyecto Final - BootCamp Globant Academy
 
 Descripción del Proyecto
 
