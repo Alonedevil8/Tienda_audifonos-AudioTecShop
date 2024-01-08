@@ -29,14 +29,14 @@ Tecnologías Utilizadas:
     Nodemailer: Facilita el envío de correos electrónicos para confirmaciones y comunicaciones.
     Concurrently y Nodemon: Herramientas para facilitar el desarrollo y la gestión del servidor.
 
-#Información del Proyecto
+## Información del Proyecto
 
     Nombre del Proyecto: tienda_audifonos_microservicios
     Versión: 1.0.0
     Autor: Andrés Dorado
     Licencia: ISC
 
-#Configuración del Proyecto
+## Configuración del Proyecto
 
 Asegúrate de tener Node.js instalado en tu sistema. Luego, sigue estos pasos para configurar el proyecto:
 
@@ -49,7 +49,7 @@ Asegúrate de tener Node.js instalado en tu sistema. Luego, sigue estos pasos pa
     Instala las dependencias:
         npm install
 
-#Scripts Disponibles
+## Scripts Disponibles
 
 Este proyecto viene con varios scripts predefinidos en el archivo package.json:
 
@@ -61,7 +61,7 @@ Este proyecto viene con varios scripts predefinidos en el archivo package.json:
     npm run db:importar: Importa datos iniciales a la base de datos.
     npm run db:eliminar: Elimina datos de la base de datos.
 
-#Modelos de Datos
+## Modelos de Datos
 
 Los modelos de datos se importan desde sus respectivos archivos y se establecen relaciones utilizando el método "belongsTo". Aquí están los modelos disponibles:
 
@@ -86,7 +86,7 @@ A continuación, se muestran las relaciones entre los modelos:
     export { Audífono, Marca, Categoría, Usuario, Carrito };
 
 
-#Vista
+## Vista
 
 ![Screenshot_2](https://github.com/Alonedevil8/Tienda_audifonos-Nodejs---Pug-Monolitica-/assets/6482729/a9d3b6c5-519f-4f84-8f49-f544cef2c519)
 ![Screenshot_3](https://github.com/Alonedevil8/Tienda_audifonos-Nodejs---Pug-Monolitica-/assets/6482729/0761199f-bd34-4a83-9429-1a5a56a9a2a5)
@@ -103,7 +103,7 @@ A continuación, se muestran las relaciones entre los modelos:
 ![Screenshot_12](https://github.com/Alonedevil8/Tienda_audifonos-Nodejs---Pug-Monolitica-/assets/6482729/b2d45061-a5be-4a02-9ccc-2a4b66b881cc)
 ![Screenshot_13](https://github.com/Alonedevil8/Tienda_audifonos-Nodejs---Pug-Monolitica-/assets/6482729/481c8866-28d6-427f-b1bd-f470d5f24863)
 
-Licencia
+## Licencia
 
 Este proyecto está bajo la Licencia ISC. Consulta el archivo LICENSE para obtener más detalles.
 
